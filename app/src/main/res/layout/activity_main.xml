@@ -12,30 +12,16 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/editText2"
-            android:layout_marginTop="77dp"
-            android:text="WCC"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
         <EditText
             android:id="@+id/editText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="31dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="133dp"
+            android:layout_marginTop="33dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Usuario" />
+            android:text="Usuario"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/editText3"
@@ -53,13 +39,20 @@
             android:id="@+id/btnIngresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingresar"
-            android:layout_alignBaseline="@+id/editText3"
-            android:layout_alignBottom="@+id/editText3"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="12dp"
-            android:layout_marginEnd="12dp" />
+            android:layout_below="@+id/editText3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Ingresar " />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnIngresar"
+            android:layout_alignStart="@+id/btnIngresar"
+            android:layout_below="@+id/btnIngresar"
+            android:layout_marginTop="14dp"
+            android:text="Registrar" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
