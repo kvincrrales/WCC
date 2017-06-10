@@ -24,7 +24,15 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".FacturasActivity" />
         <activity android:name=".Registro" />
-        <activity android:name=".ClientesActivity"></activity>
+        <activity android:name=".ClientesActivity" />
+        <activity android:name=".UsuarioActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OtrosActivity"></activity>
     </application>
 
 </manifest>
