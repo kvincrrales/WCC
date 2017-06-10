@@ -1,8 +1,11 @@
 package una.ac.cr.wcc;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -46,6 +49,22 @@ public class FacturasActivity extends AppCompatActivity {
                         swipeDismissDialog.dismiss();
                     }
                 });
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_add:
+                        Toast.makeText(FacturasActivity.this, "Action Add Clicked" , Toast.LENGTH_SHORT).show();
+                    case R.id.action_edit:
+                        Toast.makeText(FacturasActivity.this, "Action Edit Clicked" , Toast.LENGTH_SHORT).show();
+                    case R.id.action_remove:
+                        Toast.makeText(FacturasActivity.this, "Action Remove Clicked" , Toast.LENGTH_SHORT).show();
+                }
+                return true;
             }
         });
     }

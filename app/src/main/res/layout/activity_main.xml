@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:textColor="@color/BLACK"
-            android:background="@drawable/boton_redondo"
+            android:background="@drawable/boton_redondo_aceptar"
             android:text="@string/Ingresar"
             android:layout_below="@+id/editText3"
             android:layout_centerHorizontal="true" />
@@ -58,7 +58,7 @@
             android:layout_alignStart="@+id/btnIngresar"
             android:layout_below="@+id/btnIngresar"
             android:layout_marginTop="32dp"
-            android:background="@drawable/boton_redondo"
+            android:background="@drawable/boton_redondo_aceptar"
             android:text="@string/Registrar"
             android:textColor="@color/BLACK" />
 

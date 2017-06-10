@@ -23,7 +23,8 @@
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".FacturasActivity" />
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".ClientesActivity"></activity>
     </application>
 
 </manifest>

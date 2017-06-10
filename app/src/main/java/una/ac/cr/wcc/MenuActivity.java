@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case 1:
-                                intent = new Intent(MenuActivity.this, FacturasActivity.class);
+                                intent = new Intent(MenuActivity.this, ClientesActivity.class);
                                 startActivity(intent);
                                 break;
                             case 2:
