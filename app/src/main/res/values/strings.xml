@@ -32,4 +32,12 @@
     <string name="nombre_de_cliente">Nombre de Cliente</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="digite_el_monto_de_la_factura">Digite el monto de la Factura</string>
+    <string name="ingrese_una_fecha">Ingrese una fecha</string>
+    <string name="Editar">Editar</string>
+    <string name="ingrese_el_que_desea">Ingrese el que desea</string>
+    <string name="ingrese_su_nombre_de_usuario">Ingrese Su Nombre de Usuario</string>
+    <string name="ingrese_la_contrase_a_deseada">Ingrese la contraseña deseada</string>
+    <string name="ingrese_contrase_a_actual">Ingrese Contraseña Actual</string>
+    <string name="ingrese_el_usuario_que_desea">Ingrese el Usuario que desea</string>
 </resources>

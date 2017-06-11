@@ -14,28 +14,67 @@
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <Button
-            android:id="@+id/btnShowDialog"
-            android:layout_centerInParent="true"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="#009688"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:text="Hello World"
-            />
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:itemBackground="@color/colorPrimary"
-            app:itemIconTint="@drawable/nav_item_color_state"
-            app:itemTextColor="@drawable/nav_item_color_state"
-            app:menu="@menu/bottom_navigation_main"
-            />
+            <LinearLayout
+                android:id="@+id/firstEditarUsuario"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditarUsuario"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/ingrese_su_nombre_de_usuario"
+
+                    android:layout_weight="0.07" />
+
+                <EditText
+                    android:id="@+id/NuevoNomUsuario"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/ingrese_el_usuario_que_desea"
+
+                    android:layout_weight="0.07" />
+                <EditText
+                    android:id="@+id/PassActual"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/ingrese_contrase_a_actual"
+
+                    android:layout_weight="0.07" />
+                <EditText
+                    android:id="@+id/PassCambio"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/ingrese_la_contrase_a_deseada"
+
+                    android:layout_weight="0.05" />
+
+                <Button
+                    android:id="@+id/btnShowDialogEditarUsuario"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="187dp"
+                    android:background="@drawable/boton_redondo_editar"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/BLACK"
+                    android:text="@string/editar"
+                    />
+
+            </LinearLayout>
+
+
+
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

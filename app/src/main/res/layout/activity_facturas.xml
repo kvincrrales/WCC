@@ -14,18 +14,161 @@
         android:background="@drawable/degradado"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
+        <ViewFlipper
+            android:id="@+id/viewflipperFacturas"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="6dp" >
 
-        <Button
-            android:id="@+id/btnShowDialog"
-            android:layout_centerInParent="true"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="#009688"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:text="Hello World"
-            />
+
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/NumeroFactura"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="0.07"
+                    android:ems="10"
+                    android:hint="Ingrese Nùmero de Factura"
+                    android:inputType="textPersonName" />
+
+                <Spinner
+                    android:id="@+id/spinnerCliente"
+                    android:layout_width="272dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nombre_de_cliente"
+                    android:layout_weight="0.09" />
+
+                <EditText
+                    android:id="@+id/montoFactura"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/digite_el_monto_de_la_factura"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="0.05" />
+
+                <EditText
+                    android:id="@+id/fechaFactura"
+                    android:layout_width="248dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:hint="@string/ingrese_una_fecha"
+                    />
+
+                <Button
+                    android:id="@+id/btnShowDialogInsertar"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="187dp"
+                    android:background="@drawable/boton_redondo_aceptar"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/BLACK"
+                    android:text="@string/Registrar"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignLeft="@+id/viewflipper"
+                    android:layout_alignStart="@+id/viewflipper" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/second"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/NumeroFacturaEditar"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:hint="Ingrese Nùmero de Factura"
+                    android:inputType="textPersonName" />
+
+                <Spinner
+                    android:id="@+id/spinnerClienteEditar"
+                    android:layout_width="272dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nombre_de_cliente"
+                  />
+
+                <EditText
+                    android:id="@+id/montoFacturaEditar"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/digite_el_monto_de_la_factura"
+
+                     />
+
+                <EditText
+                    android:id="@+id/fechaFacturaEditar"
+                    android:layout_width="248dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:hint="@string/ingrese_una_fecha"
+                    />
+
+                <Button
+                    android:id="@+id/btnShowDialogEditar"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="187dp"
+                    android:background="@drawable/boton_redondo_editar"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/BLACK"
+                    android:text="@string/Editar"
+              />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/third"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/eliminarFactura"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Digite el número de Factura"
+
+                     />
+
+
+
+                <Button
+                    android:id="@+id/btnShowDialogEliminar"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="187dp"
+                    android:background="@drawable/boton_redondo_eliminar"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/BLACK"
+                    android:text="@string/eliminar"
+                    />
+
+
+
+
+            </LinearLayout>
+        </ViewFlipper>
+
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"

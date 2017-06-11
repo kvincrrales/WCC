@@ -27,7 +27,6 @@ public class MenuActivity extends AppCompatActivity {
                 .addSubMenu(Color.parseColor("#ff0000"),R.drawable.master)
                 .addSubMenu(Color.parseColor("#03a9f4"),R.drawable.master)
                 .addSubMenu(Color.parseColor("#1a237e"),R.drawable.master)
-
                 .setOnMenuSelectedListener(new OnMenuSelectedListener(){
 
                     @Override
