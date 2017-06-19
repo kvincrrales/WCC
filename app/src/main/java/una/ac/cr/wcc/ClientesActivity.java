@@ -25,11 +25,14 @@ public class ClientesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes);
+
         Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         viewFlipper.setInAnimation(in);
         viewFlipper.setOutAnimation(out);
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -58,6 +61,7 @@ public class ClientesActivity extends AppCompatActivity {
         btnShowDialog = (Button)findViewById(R.id.btnShowDialog);
         btnShowDialog2 = (Button)findViewById(R.id.btnShowDialog2);
         btnShowDialog3 = (Button)findViewById(R.id.btnShowDialog3);
+
         btnShowDialog.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
