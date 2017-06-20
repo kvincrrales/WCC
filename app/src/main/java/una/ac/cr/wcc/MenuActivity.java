@@ -33,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
                     public void onMenuSelected(int index){
                         switch (index) {
                             case 0:
-                                Intent intent = new Intent(MenuActivity.this, FacturasActivity.class);
+                                Intent intent = new Intent(MenuActivity.this, RegistrarClientesActivity.class);
                                 startActivity(intent);
                                 break;
                             case 1:

@@ -35,7 +35,8 @@
         <activity android:name=".OtrosActivity" />
         <activity android:name=".RegistrarFacturaActivity" />
         <activity android:name=".RegistrarFacturasActivity" />
-        <activity android:name=".RegistrarUsuariosActivity"></activity>
+        <activity android:name=".RegistrarUsuariosActivity" />
+        <activity android:name=".RegistrarClientesActivity"></activity>
     </application>
 
 </manifest>

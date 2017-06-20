@@ -26,7 +26,7 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.textView);
 
-        controller = new BD_Controlador(this,"",null,2);
+        controller = new BD_Controlador(this,"",null,1);
     }
 
     public void btn_click(View view){

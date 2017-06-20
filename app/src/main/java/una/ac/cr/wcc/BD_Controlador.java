@@ -20,13 +20,14 @@ public class BD_Controlador extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE FACTURAS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NUMERO TEXT UNIQUE, CLIENTE TEXT, MONTO TEXT, FECHA TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE USUARIOS(ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT UNIQUE, NOMBRE TEXT, CONTRA TEXT);");
-
+        sqLiteDatabase.execSQL("CREATE TABLE CLIENTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, CUENTA TEXT UNIQUE, NOMBRE TEXT);");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS FACTURAS;");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS USUARIOS;");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS CLIENTES;");
         onCreate(sqLiteDatabase);
 
     }
@@ -72,6 +73,28 @@ public class BD_Controlador extends SQLiteOpenHelper {
     }
     public void listar_usuarios(TextView textView){
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM USUARIOS", null);
+        textView.setText("");
+        while (cursor.moveToNext()) {
+            textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
+        }
+    }
+    //cuentaCliente,nombreCliente
+    public void insertar_cliente(String cuentaCliente, String nombreCliente){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("CUENTA", cuentaCliente);
+        contentValues.put("NOMBRE", nombreCliente);
+        this.getWritableDatabase().insertOrThrow("CLIENTES","",contentValues);
+    }
+
+    public void eliminar_cliente(String cuentaCliente){
+        this.getWritableDatabase().delete("CLIENTES","CUENTA='"+cuentaCliente+"'",null);
+    }
+
+    public void actualizar_cliente(String old_cuenta, String new_cuenta){
+        this.getWritableDatabase().execSQL("UPDATE CLIENTES SET CUENTA='"+new_cuenta+"' WHERE CUENTA='"+old_cuenta+"'");
+    }
+    public void listar_clientes(TextView textView){
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM CLIENTES", null);
         textView.setText("");
         while (cursor.moveToNext()) {
             textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
