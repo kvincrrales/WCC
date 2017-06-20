@@ -4,55 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="una.ac.cr.wcc.RegistrarFacturaActivity">
+    tools:context="una.ac.cr.wcc.RegistrarUsuariosActivity">
 
     <LinearLayout
-    android:id="@+id/linear"
-    android:layout_width="368dp"
-    android:layout_height="551dp"
-    android:orientation="vertical"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp">
-
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
         <EditText
-            android:id="@+id/firstname_input"
+            android:id="@+id/emailUsuario_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Firstname" />
+            android:hint="Email" />
 
         <EditText
-            android:id="@+id/lasttname_input"
+            android:id="@+id/nombreUsuario_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Lastname" />
+            android:hint="Nombre Usuario" />
+
+        <EditText
+            android:id="@+id/passUsuario_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña" />
+
 
         <Button
             android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btn_click"
-            android:text="ADD STUDENT" />
-
+            android:text="Registrar" />
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btn_click"
-            android:text="DELETE STUDENT" />
+            android:text="Eliminar" />
 
         <Button
             android:id="@+id/btn_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btn_click"
-            android:text="UPDATE STUDENT" />
+            android:text="Actualizar" />
 
         <Button
-            android:id="@+id/list_students"
+            android:id="@+id/listar_usuarios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btn_click"
-            android:text="LIST STUDENTS" />
+            android:text="Listar" />
 
         <TextView
             android:id="@+id/textView"
@@ -61,7 +65,5 @@
             android:gravity="top|center"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

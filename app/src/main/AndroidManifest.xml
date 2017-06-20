@@ -33,7 +33,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".OtrosActivity" />
-        <activity android:name=".RegistrarFacturaActivity"></activity>
+        <activity android:name=".RegistrarFacturaActivity" />
+        <activity android:name=".RegistrarFacturasActivity" />
+        <activity android:name=".RegistrarUsuariosActivity"></activity>
     </application>
 
 </manifest>
