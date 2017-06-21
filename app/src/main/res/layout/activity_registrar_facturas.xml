@@ -34,8 +34,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Fecha Factura" />
-
+        <!--
         <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btn_click"
+            android:text="Actualizar" />
+-->
+        <!--<Button
             android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,16 +67,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btn_click"
-            android:text="Listar" />
+            android:text="Listar" />-->
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="top|center"
-            android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+</LinearLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteY="20dp"
+        tools:layout_editor_absoluteX="8dp">
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/cardview_dark_background"
+            app:itemIconTint="@drawable/nav_item_color_state"
+            app:itemTextColor="@drawable/nav_item_color_state"
+            app:menu="@menu/bottom_navigation_main"
+            />
 
-
-    </LinearLayout>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

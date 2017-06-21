@@ -22,18 +22,19 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         CircleMenu circleMenu = (CircleMenu)findViewById(R.id.circle_menu);
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.master, R.drawable.master)
-                .addSubMenu(Color.parseColor("#6d4c41"),R.drawable.master)
-                .addSubMenu(Color.parseColor("#ff0000"),R.drawable.master)
-                .addSubMenu(Color.parseColor("#03a9f4"),R.drawable.master)
-                .addSubMenu(Color.parseColor("#1a237e"),R.drawable.master)
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.pokeball, R.drawable.pokeball)
+                .addSubMenu(Color.parseColor("#AED6F1"),R.drawable.squirtle)
+                .addSubMenu(Color.parseColor("#ABEBC6"),R.drawable.bullbasaur)
+                .addSubMenu(Color.parseColor("#FADBD8"),R.drawable.charmander)
+                .addSubMenu(Color.parseColor("#FAD7A0"),R.drawable.pikachu)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener(){
 
                     @Override
                     public void onMenuSelected(int index){
                         switch (index) {
                             case 0:
-                                Intent intent = new Intent(MenuActivity.this, RegistrarClientesActivity.class);
+
+                                Intent intent = new Intent(MenuActivity.this, RegistrarFacturasActivity.class);
                                 startActivity(intent);
                                 break;
                             case 1:
@@ -41,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case 2:
-                                intent = new Intent(MenuActivity.this, RegistrarFacturasActivity.class);
+                                intent = new Intent(MenuActivity.this, RegistrarClientesActivity.class);
                                 startActivity(intent);
                                 break;
                             case 3:
