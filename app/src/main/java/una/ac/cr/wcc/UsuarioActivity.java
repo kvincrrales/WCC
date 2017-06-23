@@ -1,11 +1,8 @@
 package una.ac.cr.wcc;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,7 +17,7 @@ public class UsuarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuario);
+        setContentView(R.layout.activity_usuario_old);
 
         btnShowDialogEditar = (Button)findViewById(R.id.btnShowDialogEditarUsuario);
         btnShowDialogEditar.setOnClickListener(new View.OnClickListener(){

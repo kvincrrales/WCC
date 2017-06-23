@@ -31,7 +31,8 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
 
     public void btn_click(View view){
         switch (view.getId()){
-            case R.id.btn_add:
+            //COMENTADOS PORQUE NO NOS SIRVEN POR USABILIDAD SIN EMBARGO AQUI ESTA LA FUNCIONALIDAD
+           /* case R.id.btn_add:
                 try {
 
                 }catch (SQLiteException e){
@@ -41,13 +42,27 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
                 break;
             case R.id.btn_delete:
                 controller.eliminar_usuario(emailUsuario.getText().toString());
-                break;
+                break;*/
             case R.id.btn_update:
+                AlertDialog.Builder dialog2 = new AlertDialog.Builder(RegistrarUsuariosActivity.this);
+                dialog2.setTitle("DIGITE LA NUEVA CONTRASEÑA");
+
+                final EditText new_PASS = new EditText(this);
+                dialog2.setView(new_PASS);
+                dialog2.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        controller.actualizar_pass(passUsuario.getText().toString(),new_PASS.getText().toString());
+                    }
+                });
+                dialog2.show();
+
                 AlertDialog.Builder dialog = new AlertDialog.Builder(RegistrarUsuariosActivity.this);
                 dialog.setTitle("DIGITE EL NUEVO EMAIL DEL USUARIO ");
 
                 final EditText new_email = new EditText(this);
                 dialog.setView(new_email);
+
 
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -57,7 +72,7 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
                     }
                 });
                 dialog.show();
-                break;
+
             case R.id.listar_usuarios:
                 controller.listar_usuarios(textView);
                 break;

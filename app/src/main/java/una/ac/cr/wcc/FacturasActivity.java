@@ -24,7 +24,7 @@ public class FacturasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facturas);
+        setContentView(R.layout.activity_facturas_old);
         Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipperFacturas);

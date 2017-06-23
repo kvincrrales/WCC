@@ -5,94 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="una.ac.cr.wcc.RegistrarFacturasActivity">
-
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="551dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
-        <EditText
-        android:id="@+id/numeroFactura_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Factura Número" />
-
-        <EditText
-            android:id="@+id/codigoCliente_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Cuenta Cliente" />
-        <EditText
-            android:id="@+id/montoFactura_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Monto Factura" />
-
-        <EditText
-            android:id="@+id/fechaFactura_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Fecha Factura" />
-        <!--
-        <Button
-            android:id="@+id/btn_update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_click"
-            android:text="Actualizar" />
--->
-        <!--<Button
-            android:id="@+id/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_click"
-            android:text="Registrar" />
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_click"
-            android:text="Eliminar" />
-
-        <Button
-            android:id="@+id/btn_update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_click"
-            android:text="Actualizar" />
-
-        <Button
-            android:id="@+id/listar_facturas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_click"
-            android:text="Listar" />-->
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="top|center"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-</LinearLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="368dp"
-        android:layout_height="551dp"
-        tools:layout_editor_absoluteY="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/degradado"
+        tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
+        <ViewFlipper
+            android:id="@+id/viewflipperFacturas"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="6dp" >
+
+
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1">
+                <EditText
+                    android:id="@+id/numeroFactura_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:hint="Factura Número" />
+
+                <EditText
+                    android:id="@+id/codigoCliente_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:hint="Cuenta Cliente" />
+                <EditText
+                    android:id="@+id/montoFactura_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:hint="Monto Factura" />
+
+                <EditText
+                    android:id="@+id/fechaFactura_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:hint="Fecha Factura" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/second"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/third"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+
+
+            </LinearLayout>
+        </ViewFlipper>
+
+
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:itemBackground="@color/cardview_dark_background"
+            app:itemBackground="@color/colorPrimary"
             app:itemIconTint="@drawable/nav_item_color_state"
             app:itemTextColor="@drawable/nav_item_color_state"
             app:menu="@menu/bottom_navigation_main"
             />
 
+
+
     </RelativeLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>

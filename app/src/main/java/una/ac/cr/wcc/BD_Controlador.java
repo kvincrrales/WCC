@@ -71,6 +71,9 @@ public class BD_Controlador extends SQLiteOpenHelper {
     public void actualizar_usuario(String old_email, String new_email){
         this.getWritableDatabase().execSQL("UPDATE USUARIOS SET EMAIL='"+new_email+"' WHERE EMAIL='"+old_email+"'");
     }
+    public void actualizar_pass(String old_pass, String new_pass){
+        this.getWritableDatabase().execSQL("UPDATE USUARIOS SET CONTRA='"+new_pass+"' WHERE CONTRA='"+old_pass+"'");
+    }
     public void listar_usuarios(TextView textView){
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM USUARIOS", null);
         textView.setText("");

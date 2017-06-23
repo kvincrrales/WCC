@@ -42,17 +42,17 @@ public class RegistrarFacturasActivity extends AppCompatActivity {
                         try {
 
                         }catch (SQLiteException e){
-                            Toast.makeText(RegistrarFacturasActivity.this, "ALREDY EXISTS", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegistrarFacturasActivity.this, "Ya existe esta factura", Toast.LENGTH_SHORT).show();
                         }
                         controller.insertar_factura(numeroFactura.getText().toString(),codigoCliente.getText().toString(),montoFactura.getText().toString()
                                 ,fechaFactura.getText().toString());
                         break;
                     case R.id.action_edit:
-                        Toast.makeText(RegistrarFacturasActivity.this, "Action Edit Clicked" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrarFacturasActivity.this, "Listar Facturas" , Toast.LENGTH_SHORT).show();
                         controller.listar_facturas(textView);
                         break;
                     case R.id.action_remove:
-                        Toast.makeText(RegistrarFacturasActivity.this, "Se elimino corrrectamente" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrarFacturasActivity.this, "Se Elimino corrrectamente" , Toast.LENGTH_SHORT).show();
                         controller.eliminar_factura(numeroFactura.getText().toString());
                         break;
                 }
