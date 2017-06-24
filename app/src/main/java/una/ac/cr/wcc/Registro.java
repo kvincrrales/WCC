@@ -72,7 +72,7 @@ public class Registro extends AppCompatActivity {
     public void registro() {
         intiliaze();
         if (!validate()) {
-            Toast.makeText(this, "Fallo el registro", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Se Registro el Usuario", Toast.LENGTH_SHORT).show();
         } else {
             onSignupSuccess();
         }

@@ -10,7 +10,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/degradado"
+        android:background="@color/cardview_dark_background"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
         <ViewFlipper
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:itemBackground="@color/colorPrimary"
+            app:itemBackground="@color/secondary_text"
             app:itemIconTint="@drawable/nav_item_color_state"
             app:itemTextColor="@drawable/nav_item_color_state"
             app:menu="@menu/bottom_navigation_main"

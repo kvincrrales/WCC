@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degradado"
+    android:background="@color/cardview_dark_background"
     tools:context="una.ac.cr.wcc.MainActivity">
 
     <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/degradado">
+        android:background="@color/cardview_dark_background"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
 
         <EditText
@@ -42,7 +44,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/boton_redondo"
+            android:background="@color/secondary_text"
             android:text="@string/Ingresar"
             android:textColor="@color/BLACK"
             android:layout_below="@+id/pass_input"
@@ -54,7 +56,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="23dp"
-            android:background="@drawable/boton_redondo"
+            android:background="@color/secondary_text"
             android:text="@string/Registrar"
             android:textColor="@color/BLACK"
             android:layout_below="@+id/btnIngresar"

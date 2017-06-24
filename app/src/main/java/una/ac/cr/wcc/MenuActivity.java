@@ -22,11 +22,11 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         CircleMenu circleMenu = (CircleMenu)findViewById(R.id.circle_menu);
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.pokeball, R.drawable.pokeball)
-                .addSubMenu(Color.parseColor("#AED6F1"),R.drawable.squirtle)
-                .addSubMenu(Color.parseColor("#ABEBC6"),R.drawable.bullbasaur)
-                .addSubMenu(Color.parseColor("#FADBD8"),R.drawable.charmander)
-                .addSubMenu(Color.parseColor("#FAD7A0"),R.drawable.pikachu)
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.seo, R.drawable.seo)
+                .addSubMenu(Color.parseColor("#AED6F1"),R.drawable.fil)
+                .addSubMenu(Color.parseColor("#ABEBC6"),R.drawable.users)
+                .addSubMenu(Color.parseColor("#FADBD8"),R.drawable.user)
+                .addSubMenu(Color.parseColor("#FAD7A0"),R.drawable.notepad)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener(){
 
                     @Override

@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degradado"
+    android:background="@color/cardview_dark_background"
     tools:context="una.ac.cr.wcc.RegistrarUsuariosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:orientation="vertical"
+        android:weightSum="1">
         <EditText
             android:id="@+id/emailUsuario_input"
             android:layout_width="match_parent"

@@ -77,8 +77,8 @@ public class RegistrarFacturasActivity extends AppCompatActivity {
                         });
                         break;
                     case R.id.action_edit:
-                        Toast.makeText(RegistrarFacturasActivity.this, "Listar Facturas" , Toast.LENGTH_SHORT).show();
-                       //controller.listar_facturas(textView);
+                        Toast.makeText(RegistrarFacturasActivity.this, "Loquis" , Toast.LENGTH_SHORT).show();
+                       controller.listar_facturas2(textView);
                         break;
                     case R.id.action_remove:
                         Toast.makeText(RegistrarFacturasActivity.this, "Se Elimino corrrectamente" , Toast.LENGTH_SHORT).show();

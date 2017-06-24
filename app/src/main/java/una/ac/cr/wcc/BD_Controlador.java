@@ -98,8 +98,27 @@ public class BD_Controlador extends SQLiteOpenHelper {
         }
     }
 
+    public void listar_facturas2(TextView textView){
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS", null);
+        textView.setText("");
+        while (cursor.moveToNext()) {
+            textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
+        }
+
+    }
+
+    public void pendiente_total(TextView textView){
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT SUM(MONTO) FROM FACTURAS", null);
+       // Cursor cursor = this.getReadableDatabase().rawQuery("SELECT SUM(MONTO) FROM FACTURAS"+" WHERE CLIENTE ='"+codigo+"'" , null);
+        textView.setText("");
+        while (cursor.moveToNext()) {
+            textView.append(cursor.getString(0)+ "\n");
+        }
+
+    }
+
     public void listar_especifico(String codigo,TableLayout tabla){
-        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS"+" WHERE NUMERO ='"+codigo+"'" , null);
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS"+" WHERE CLIENTE ='"+codigo+"'" , null);
         while (cursor.moveToNext()) {
             Random rnd = new Random();
             int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
@@ -170,7 +189,6 @@ public class BD_Controlador extends SQLiteOpenHelper {
         }
         return false;
     }
-    //cuentaCliente,nombreCliente
     public void insertar_cliente(String cuentaCliente, String nombreCliente){
         ContentValues contentValues = new ContentValues();
         contentValues.put("CUENTA", cuentaCliente);
