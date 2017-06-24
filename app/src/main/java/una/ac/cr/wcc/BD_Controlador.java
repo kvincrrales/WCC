@@ -6,11 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -118,6 +121,24 @@ public class BD_Controlador extends SQLiteOpenHelper {
         while (cursor.moveToNext()) {
             textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
         }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public boolean buscar_usuarios(String user, String pass){
+
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT NOMBRE FROM USUARIOS", null);
+        Cursor cursor2 = this.getReadableDatabase().rawQuery("SELECT CONTRA FROM USUARIOS", null);
+        while (cursor.moveToNext()&&cursor2.moveToNext()) {
+            System.out.println((cursor.getString(0)));
+            System.out.println((cursor2.getString(0)));
+            System.out.println(user);
+            String baseUser=cursor.getString(0);
+            String basePass=cursor2.getString(0);
+            System.out.println(pass);
+            if(Objects.equals(baseUser, user) && Objects.equals(basePass, pass)){
+                return true;
+            }
+        }
+        return false;
     }
     //cuentaCliente,nombreCliente
     public void insertar_cliente(String cuentaCliente, String nombreCliente){

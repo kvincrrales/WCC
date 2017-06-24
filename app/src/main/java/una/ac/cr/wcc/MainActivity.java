@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    BD_Controlador controller;
 
     Button btnIngresar,btnRegistrar;
     @Override
@@ -19,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         btnIngresar = (Button)findViewById(R.id.btnIngresar);
         btnRegistrar = (Button)findViewById(R.id.Btn_Registrar);
 
-
+        controller = new BD_Controlador(this,"",null,1);
         btnIngresar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String usuario = ((EditText)findViewById(R.id.username_input)).getText().toString();
                 String password = ((EditText)findViewById(R.id.pass_input)).getText().toString();
-                if(usuario.equals("admin")&& password.equals("admin")){
+                if(controller.buscar_usuarios(usuario,password)==true){
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     startActivity(intent);
                 }else{
