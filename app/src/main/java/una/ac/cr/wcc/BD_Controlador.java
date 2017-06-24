@@ -5,17 +5,27 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Kevin on 19/06/2017.
  */
 
 public class BD_Controlador extends SQLiteOpenHelper {
+    public Context getContext() {
+        return context;
+    }
+
+    Context context;
+    public void setContext(Context context) {
+        this.context = context;
+    }
 
 
     public BD_Controlador(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -55,24 +65,32 @@ public class BD_Controlador extends SQLiteOpenHelper {
     public void actualizar_factura(String old_numero, String new_numero){
         this.getWritableDatabase().execSQL("UPDATE FACTURAS SET NUMERO='"+new_numero+"' WHERE NUMERO='"+old_numero+"'");
     }
-    public void listar_facturas( TableLayout tabla, TextView textViewNombre, TextView textViewMonto, TextView textViewFactura, TextView textViewFecha){
+    public void listar_facturas( TableLayout tabla){
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS", null);
-        textViewNombre.setText("");
-        textViewMonto.setText("");
-        textViewFactura.setText("");
-        textViewFecha.setText("");
-        final ArrayList<TextView> datos = new ArrayList<TextView>();
+
         while (cursor.moveToNext()) {
-
-            textViewFactura.setText("Factura: "+cursor.getString(1));
-            textViewNombre.setText("Nombre: "+cursor.getString(2));
-            textViewMonto.setText("Monto: "+cursor.getString(3));
-            textViewFecha.setText("Fecha: "+cursor.getString(4));
-            datos.add(textViewFactura);
-            datos.add(textViewNombre);
-            datos.add(textViewMonto);
-            datos.add(textViewFecha);
-
+            Random rnd = new Random();
+            int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+            TextView x=new TextView(getContext());
+            TextView y=new TextView(getContext());
+            TextView z=new TextView(getContext());
+            TextView j=new TextView(getContext());
+            x.setTextSize(30);
+            y.setTextSize(30);
+            z.setTextSize(30);
+            j.setTextSize(30);
+            x.setBackgroundColor(color);
+            y.setBackgroundColor(color);
+            z.setBackgroundColor(color);
+            j.setBackgroundColor(color);
+            x.setText("Factura: "+cursor.getString(1));
+            y.setText("Nombre:"+cursor.getString(2));
+            z.setText("Monto: "+cursor.getString(3));
+            j.setText("Fecha: "+cursor.getString(4)+"\n");
+            tabla.addView(x);
+            tabla.addView(y);
+            tabla.addView(z);
+            tabla.addView(j);
         }
     }
 

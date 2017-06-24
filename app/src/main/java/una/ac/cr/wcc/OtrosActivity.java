@@ -21,12 +21,10 @@ public class OtrosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_pendientes);
-        textViewNombre = (TextView)findViewById(R.id.textViewNOMBRE);
-        textViewMonto = (TextView)findViewById(R.id.textViewMONTO);
-        textViewFactura = (TextView)findViewById(R.id.textViewFACTURA);
-        textViewFecha = (TextView)findViewById(R.id.textViewFECHA);
+
         tabla = (TableLayout)findViewById(R.id.tabla);
         controller = new BD_Controlador(this,"",null,1);
+        controller.setContext(this);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -34,7 +32,7 @@ public class OtrosActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.action_add:
                         Toast.makeText(OtrosActivity.this, "Mostrar Todas" , Toast.LENGTH_SHORT).show();
-                        controller.listar_facturas(tabla, textViewFactura,textViewNombre,textViewMonto,textViewFecha);
+                        controller.listar_facturas(tabla);
                         break;
                     case R.id.action_edit:
                         Toast.makeText(OtrosActivity.this, "Mostrar por cliente" , Toast.LENGTH_SHORT).show();
