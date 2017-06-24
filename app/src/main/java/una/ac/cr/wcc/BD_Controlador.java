@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.annotation.StringDef;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class BD_Controlador extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE FACTURAS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NUMERO TEXT UNIQUE, CLIENTE TEXT, MONTO TEXT, FECHA TEXT);");
+        sqLiteDatabase.execSQL("CREATE TABLE FACTURAS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NUMERO TEXT , CLIENTE TEXT, MONTO TEXT, FECHA TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE USUARIOS(ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT UNIQUE, NOMBRE TEXT, CONTRA TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE CLIENTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, CUENTA TEXT UNIQUE, NOMBRE TEXT);");
 
@@ -97,6 +98,33 @@ public class BD_Controlador extends SQLiteOpenHelper {
         }
     }
 
+    public void listar_especifico(String codigo,TableLayout tabla){
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS"+" WHERE NUMERO ='"+codigo+"'" , null);
+        while (cursor.moveToNext()) {
+            Random rnd = new Random();
+            int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+            TextView x=new TextView(getContext());
+            TextView y=new TextView(getContext());
+            TextView z=new TextView(getContext());
+            TextView j=new TextView(getContext());
+            x.setTextSize(30);
+            y.setTextSize(30);
+            z.setTextSize(30);
+            j.setTextSize(30);
+            x.setBackgroundColor(color);
+            y.setBackgroundColor(color);
+            z.setBackgroundColor(color);
+            j.setBackgroundColor(color);
+            x.setText("Factura: "+cursor.getString(1));
+            y.setText("Nombre:"+cursor.getString(2));
+            z.setText("Monto: "+cursor.getString(3));
+            j.setText("Fecha: "+cursor.getString(4)+"\n");
+            tabla.addView(x);
+            tabla.addView(y);
+            tabla.addView(z);
+            tabla.addView(j);
+    }
+    }
     public void insertar_usuario(String emailUsuario, String nombreUsuario,  String passUsuario){
         ContentValues contentValues = new ContentValues();
         contentValues.put("EMAIL", emailUsuario);
@@ -122,6 +150,8 @@ public class BD_Controlador extends SQLiteOpenHelper {
             textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
         }
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public boolean buscar_usuarios(String user, String pass){
 
