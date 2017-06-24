@@ -6,17 +6,23 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.andreilisun.swipedismissdialog.OnSwipeDismissListener;
+import com.github.andreilisun.swipedismissdialog.SwipeDismissDialog;
+import com.github.andreilisun.swipedismissdialog.SwipeDismissDirection;
+
 public class RegistrarUsuariosActivity extends AppCompatActivity {
     private EditText et_nombreUsuario_input, et_emailUsuario_input, et_passUsuario_input;
     private String nombreUsuario_input, emailUsuario_input, passUsuario_input;
     Button btn_update;
-
+    Button btnOk;
+    SwipeDismissDialog swipeDismissDialog;
     EditText nombreUsuario,emailUsuario,passUsuario;
     TextView textView;
     BD_Controlador controller;
@@ -82,17 +88,39 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
     public void btn_click(View view){
         switch (view.getId()){
             //COMENTADOS PORQUE NO NOS SIRVEN POR USABILIDAD SIN EMBARGO AQUI ESTA LA FUNCIONALIDAD
-           /* case R.id.btn_add:
+            case R.id.btn_add:
                 try {
 
                 }catch (SQLiteException e){
                     Toast.makeText(RegistrarUsuariosActivity.this, "ALREDY EXISTS", Toast.LENGTH_SHORT).show();
                 }
                 controller.insertar_usuario(emailUsuario.getText().toString(),nombreUsuario.getText().toString(),passUsuario.getText().toString());
+                View dialog = LayoutInflater.from(getBaseContext()).inflate(R.layout.dialog_success,null);
+
+                swipeDismissDialog = new SwipeDismissDialog.Builder(RegistrarUsuariosActivity.this)
+                        .setView(dialog)
+                        .setOnSwipeDismissListener(new OnSwipeDismissListener() {
+                            @Override
+                            public void onSwipeDismiss(View view, SwipeDismissDirection direction) {
+                                Toast.makeText(RegistrarUsuariosActivity.this, "Dismiss on left "+direction, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .build()
+                        .show();
+
+                btnOk = (Button)dialog.findViewById(R.id.btnOk);
+                btnOk.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Toast.makeText(RegistrarUsuariosActivity.this, "Click OK !!!", Toast.LENGTH_SHORT).show();
+                        swipeDismissDialog.dismiss();
+                    }
+                });
+
                 break;
             case R.id.btn_delete:
                 controller.eliminar_usuario(emailUsuario.getText().toString());
-                break;*/
+                break;
             case R.id.btn_update:
                 AlertDialog.Builder dialog2 = new AlertDialog.Builder(RegistrarUsuariosActivity.this);
                 dialog2.setTitle("DIGITE LA NUEVA CONTRASEÑA");
@@ -107,21 +135,21 @@ public class RegistrarUsuariosActivity extends AppCompatActivity {
                 });
                 dialog2.show();
 
-                AlertDialog.Builder dialog = new AlertDialog.Builder(RegistrarUsuariosActivity.this);
-                dialog.setTitle("DIGITE EL NUEVO EMAIL DEL USUARIO ");
+                AlertDialog.Builder dialog4 = new AlertDialog.Builder(RegistrarUsuariosActivity.this);
+                dialog4.setTitle("DIGITE EL NUEVO EMAIL DEL USUARIO ");
 
                 final EditText new_email = new EditText(this);
-                dialog.setView(new_email);
+                dialog4.setView(new_email);
 
 
-                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                dialog4.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         controller.actualizar_usuario(emailUsuario.getText().toString(),new_email.getText().toString());
 
                     }
                 });
-                dialog.show();
+                dialog4.show();
 
             case R.id.listar_usuarios:
                 controller.listar_usuarios(textView);
