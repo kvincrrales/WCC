@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class OtrosActivity extends AppCompatActivity {
 
     TextView textViewNombre,textViewMonto,textViewFactura,textViewFecha;
-
+    TableLayout tabla;
     BD_Controlador controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class OtrosActivity extends AppCompatActivity {
         textViewMonto = (TextView)findViewById(R.id.textViewMONTO);
         textViewFactura = (TextView)findViewById(R.id.textViewFACTURA);
         textViewFecha = (TextView)findViewById(R.id.textViewFECHA);
-
+        tabla = (TableLayout)findViewById(R.id.tabla);
         controller = new BD_Controlador(this,"",null,1);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -34,7 +34,7 @@ public class OtrosActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.action_add:
                         Toast.makeText(OtrosActivity.this, "Mostrar Todas" , Toast.LENGTH_SHORT).show();
-                        controller.listar_facturas(textViewFactura,textViewNombre,textViewMonto,textViewFecha);
+                        controller.listar_facturas(tabla, textViewFactura,textViewNombre,textViewMonto,textViewFecha);
                         break;
                     case R.id.action_edit:
                         Toast.makeText(OtrosActivity.this, "Mostrar por cliente" , Toast.LENGTH_SHORT).show();

@@ -9,11 +9,15 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Kevin on 19/06/2017.
  */
 
 public class BD_Controlador extends SQLiteOpenHelper {
+
+
     public BD_Controlador(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "CAJAS.db", factory, version);
     }
@@ -23,6 +27,7 @@ public class BD_Controlador extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE FACTURAS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NUMERO TEXT UNIQUE, CLIENTE TEXT, MONTO TEXT, FECHA TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE USUARIOS(ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT UNIQUE, NOMBRE TEXT, CONTRA TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE CLIENTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, CUENTA TEXT UNIQUE, NOMBRE TEXT);");
+
     }
 
     @Override
@@ -50,17 +55,24 @@ public class BD_Controlador extends SQLiteOpenHelper {
     public void actualizar_factura(String old_numero, String new_numero){
         this.getWritableDatabase().execSQL("UPDATE FACTURAS SET NUMERO='"+new_numero+"' WHERE NUMERO='"+old_numero+"'");
     }
-    public void listar_facturas( TextView textViewNombre, TextView textViewMonto, TextView textViewFactura, TextView textViewFecha){
+    public void listar_facturas( TableLayout tabla, TextView textViewNombre, TextView textViewMonto, TextView textViewFactura, TextView textViewFecha){
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS", null);
         textViewNombre.setText("");
         textViewMonto.setText("");
         textViewFactura.setText("");
         textViewFecha.setText("");
+        final ArrayList<TextView> datos = new ArrayList<TextView>();
         while (cursor.moveToNext()) {
-            textViewFactura.append(cursor.getString(0));
-            textViewNombre.append(cursor.getString(1));
-            textViewMonto.append(cursor.getString(2));
-            textViewFecha.append(cursor.getString(3));
+
+            textViewFactura.setText("Factura: "+cursor.getString(1));
+            textViewNombre.setText("Nombre: "+cursor.getString(2));
+            textViewMonto.setText("Monto: "+cursor.getString(3));
+            textViewFecha.setText("Fecha: "+cursor.getString(4));
+            datos.add(textViewFactura);
+            datos.add(textViewNombre);
+            datos.add(textViewMonto);
+            datos.add(textViewFecha);
+
         }
     }
 
