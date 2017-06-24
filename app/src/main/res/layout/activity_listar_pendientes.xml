@@ -14,17 +14,63 @@
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <Button
-            android:id="@+id/btnShowDialog"
-            android:layout_centerInParent="true"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="#009688"
-            android:layout_margin="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:text="AQUI VAN LOS PENDIENTES"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TableLayout
+                android:id="@+id/tabla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.02">
+
+                <TableRow
+                    android:id="@+id/row4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TableRow
+                    android:id="@+id/row5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textViewMONTO"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+
+                android:gravity="top|center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.02" />
+
+            <TextView
+                android:id="@+id/textViewNOMBRE"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+
+                android:gravity="top|center"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textViewFACTURA"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="top|center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.03" />
+
+            <TextView
+                android:id="@+id/textViewFECHA"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_weight="0.02"
+                android:gravity="top|center"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -34,7 +80,7 @@
             app:itemBackground="@color/colorPrimary"
             app:itemIconTint="@drawable/nav_item_color_state"
             app:itemTextColor="@drawable/nav_item_color_state"
-            app:menu="@menu/bottom_navigation_main"
+            app:menu="@menu/boton_mostrar_listas"
             />
 
     </RelativeLayout>

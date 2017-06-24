@@ -6,20 +6,15 @@
         android:id="@+id/action_add"
         android:enabled="true"
         android:icon="@drawable/ic_add"
-        android:title="Añadir"
+        android:title="Mostrar Pendientes"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_edit"
         android:enabled="true"
         android:icon="@drawable/ic_edit"
-        android:title="Listar"
+        android:title="Mostrar Otros"
         app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/action_remove"
-        android:enabled="true"
-        android:icon="@drawable/ic_remove"
-        android:title="Remover"
-        app:showAsAction="ifRoom"/>
+
 
 
 </menu>

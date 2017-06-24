@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 /**
@@ -48,11 +50,17 @@ public class BD_Controlador extends SQLiteOpenHelper {
     public void actualizar_factura(String old_numero, String new_numero){
         this.getWritableDatabase().execSQL("UPDATE FACTURAS SET NUMERO='"+new_numero+"' WHERE NUMERO='"+old_numero+"'");
     }
-    public void listar_facturas(TextView textView){
+    public void listar_facturas( TextView textViewNombre, TextView textViewMonto, TextView textViewFactura, TextView textViewFecha){
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM FACTURAS", null);
-        textView.setText("");
+        textViewNombre.setText("");
+        textViewMonto.setText("");
+        textViewFactura.setText("");
+        textViewFecha.setText("");
         while (cursor.moveToNext()) {
-            textView.append(cursor.getString(0)+ " " +cursor.getString(1)+ " " +cursor.getString(2)+ "\n");
+            textViewFactura.append(cursor.getString(0));
+            textViewNombre.append(cursor.getString(1));
+            textViewMonto.append(cursor.getString(2));
+            textViewFecha.append(cursor.getString(3));
         }
     }
 

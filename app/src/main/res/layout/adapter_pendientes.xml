@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/static_oFactura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numero de Factura:   " />
+
+            <TextView
+                android:id="@+id/FACTURA_NUMERO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/static_Cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cliente:   " />
+
+            <TextView
+                android:id="@+id/CLIENTE_NOMBRE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/static_Monto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto:    " />
+
+            <TextView
+                android:id="@+id/MONTO_VALOR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+</LinearLayout>
